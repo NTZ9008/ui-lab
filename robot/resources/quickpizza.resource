@@ -72,3 +72,30 @@ Recommendation Should Keep The Restrictions
     Should Be True    ${calories} <= ${max calories}
     Log    Pizza=${name}, Tool=${tool}, Calories=${calories}
     RETURN    ${tool}
+
+Rate The Pizza Without Logging In
+    [Documentation]    Click Love it! while logged out and verify the login prompt appears.
+    Click Button    name:rate-5
+    Wait Until Element Is Visible    id:rate-result
+    Element Text Should Be    id:rate-result    Please log in first.
+
+Wait Until The Page Is Ready
+    [Documentation]    Wait until the SvelteKit page finishes client-side mounting.
+    Wait Until Page Contains Element    id:svelte-announcer
+
+Log In As Admin
+    [Documentation]    Open the admin page, log in, and wait for the latest recommendations heading.
+    [Arguments]    ${user}    ${password}
+    Go To    ${URL}/admin
+    Wait Until The Page Is Ready
+    Wait Until Element Is Visible    id:username
+    Input Text    id:username    ${user}
+    Input Password    id:password    ${password}
+    Click Button    css:button[type=submit]
+    Wait Until Page Contains    Latest pizza recommendations
+
+Admin List Should Show The Pizza
+    [Documentation]    Verify the named pizza and recommended tool appear in the admin recommendations list.
+    [Arguments]    ${name}    ${tool}
+    Wait Until Page Contains    ${name}
+    Element Should Contain    xpath://li[contains(.,'${name}')]    ${tool}
