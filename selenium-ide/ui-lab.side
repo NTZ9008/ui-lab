@@ -29,12 +29,7 @@
           "comment": "",
           "command": "click",
           "target": "id=my-text-id",
-          "targets": [
-            ["id=my-text-id", "id"],
-            ["name=my-text", "name"],
-            ["css=#my-text-id", "css:finder"],
-            ["xpath=//input[@id='my-text-id']", "xpath:attributes"]
-          ],
+          "targets": [],
           "value": ""
         },
         {
@@ -42,11 +37,7 @@
           "comment": "",
           "command": "type",
           "target": "id=my-text-id",
-          "targets": [
-            ["id=my-text-id", "id"],
-            ["name=my-text", "name"],
-            ["css=#my-text-id", "css:finder"]
-          ],
+          "targets": [],
           "value": "Hello Selenium"
         },
         {
@@ -54,10 +45,7 @@
           "comment": "",
           "command": "select",
           "target": "name=my-select",
-          "targets": [
-            ["name=my-select", "name"],
-            ["css=.form-select", "css:finder"]
-          ],
+          "targets": [],
           "value": "label=Two"
         },
         {
@@ -72,6 +60,30 @@
             ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
           ],
           "value": ""
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000007",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=message",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000008",
+          "comment": "",
+          "command": "assertTitle",
+          "target": "Web form - target page",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000009",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=message",
+          "targets": [],
+          "value": "Received!"
         }
       ]
     }
