@@ -3,8 +3,8 @@
 Tool parts that I chose: Part 1 (Selenium IDE) and Part 3 (Robot Framework)
 
 ## Part 0
-- Step 0.1, Chrome version:
-- Step 0.3, ChromeDriver version:
+- Step 0.1, Chrome version: Google Chrome 157.0.8103.51 (Official Build) (64-bit)
+- Step 0.3, ChromeDriver version: ChromeDriver 157.0.8103.51 (653674df293788cf4932c40d914e9e15b41a2d31-refs/branch-heads/8103_38@{#9})
 - Step 0.4, locator of Pizza, Please!:
 - Step 0.4, locator of Excluded tools:
 - Step 0.4, locator of Must be vegetarian:
