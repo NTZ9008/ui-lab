@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Keywords and locators for the QuickPizza application.
 Library    SeleniumLibrary    timeout=10s
+Library    String
 
 
 *** Variables ***
@@ -39,3 +40,35 @@ Fill In The Pizza Request
     List Selection Should Be    css:select    ${tool}
     Checkbox Should Be Selected    id:default-checkbox
     Textfield Value Should Be    css:input#pizza-name    ${name}
+
+Ask For A Pizza
+    [Documentation]    Submit the pizza request and wait for the recommendation box.
+    Click Button    name:pizza-please
+    Wait Until Element Is Visible    id:recommendations
+    Wait Until Element Is Visible    xpath://p[starts-with(., 'Name:')]
+
+Get Recommended Tool
+    [Documentation]    Extract the tool name from the pizza recommendation.
+    ${text}=    Get Text    xpath://p[starts-with(., 'Tool:')]
+    ${raw}=    Fetch From Right    ${text}    :
+    ${tool}=    Strip String    ${raw}
+    RETURN    ${tool}
+
+Get Calories Per Slice
+    [Documentation]    Extract the calories per slice as an integer.
+    ${text}=    Get Text    xpath://p[starts-with(., 'Calories per slice:')]
+    ${raw}=    Fetch From Right    ${text}    :
+    ${calories}=    Strip String    ${raw}
+    ${calories int}=    Convert To Integer    ${calories}
+    RETURN    ${calories int}
+
+Recommendation Should Keep The Restrictions
+    [Documentation]    Verify the recommended pizza matches the name, avoids the excluded tool, and respects max calories.
+    [Arguments]    ${name}    ${excluded tool}    ${max calories}
+    Element Text Should Be    xpath://p[starts-with(., 'Name:')]    Name: ${name}
+    ${tool}=    Get Recommended Tool
+    Should Not Be Equal    ${tool}    ${excluded tool}
+    ${calories}=    Get Calories Per Slice
+    Should Be True    ${calories} <= ${max calories}
+    Log    Pizza=${name}, Tool=${tool}, Calories=${calories}
+    RETURN    ${tool}
