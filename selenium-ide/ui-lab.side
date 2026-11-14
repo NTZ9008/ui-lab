@@ -1,0 +1,95 @@
+{
+  "id": "a1b2c3d4-0001-4000-8000-000000000001",
+  "version": "2.0",
+  "name": "ui-lab",
+  "url": "https://www.selenium.dev",
+  "tests": [
+    {
+      "id": "t1000001-0001-4000-8000-000000000001",
+      "name": "web form",
+      "commands": [
+        {
+          "id": "c1000001-0000-0000-0000-000000000001",
+          "comment": "",
+          "command": "open",
+          "target": "/selenium/web/web-form.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000002",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x768",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000003",
+          "comment": "",
+          "command": "click",
+          "target": "id=my-text-id",
+          "targets": [
+            ["id=my-text-id", "id"],
+            ["name=my-text", "name"],
+            ["css=#my-text-id", "css:finder"],
+            ["xpath=//input[@id='my-text-id']", "xpath:attributes"]
+          ],
+          "value": ""
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000004",
+          "comment": "",
+          "command": "type",
+          "target": "id=my-text-id",
+          "targets": [
+            ["id=my-text-id", "id"],
+            ["name=my-text", "name"],
+            ["css=#my-text-id", "css:finder"]
+          ],
+          "value": "Hello Selenium"
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000005",
+          "comment": "",
+          "command": "select",
+          "target": "name=my-select",
+          "targets": [
+            ["name=my-select", "name"],
+            ["css=.form-select", "css:finder"]
+          ],
+          "value": "label=Two"
+        },
+        {
+          "id": "c1000001-0000-0000-0000-000000000006",
+          "comment": "",
+          "command": "click",
+          "target": "css=.btn",
+          "targets": [
+            ["css=.btn", "css:finder"],
+            ["xpath=//button[@type='submit']", "xpath:attributes"],
+            ["xpath=//button", "xpath:position"],
+            ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "s1000001-0001-4000-8000-000000000001",
+      "name": "Default Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "t1000001-0001-4000-8000-000000000001"
+      ]
+    }
+  ],
+  "urls": [
+    "https://www.selenium.dev/"
+  ],
+  "plugins": []
+}
