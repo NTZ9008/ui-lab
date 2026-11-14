@@ -12,7 +12,7 @@
           "id": "c1000001-0000-0000-0000-000000000001",
           "comment": "",
           "command": "open",
-          "target": "/selenium/web/web-form.html",
+          "target": "https://www.selenium.dev/selenium/web/web-form.html",
           "targets": [],
           "value": ""
         },
@@ -52,7 +52,7 @@
           "id": "c1000001-0000-0000-0000-000000000006",
           "comment": "",
           "command": "click",
-          "target": "css=.btn",
+          "target": "xpath=//button[@type='submit']",
           "targets": [
             ["css=.btn", "css:finder"],
             ["xpath=//button[@type='submit']", "xpath:attributes"],
