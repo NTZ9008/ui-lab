@@ -2,7 +2,7 @@
   "id": "a1b2c3d4-0001-4000-8000-000000000001",
   "version": "2.0",
   "name": "ui-lab",
-  "url": "https://www.selenium.dev",
+  "url": "https://quickpizza.grafana.com",
   "tests": [
     {
       "id": "t1000001-0001-4000-8000-000000000001",
@@ -86,6 +86,244 @@
           "value": "Received!"
         }
       ]
+    },
+    {
+      "id": "t2000002-0002-4000-8000-000000000002",
+      "name": "QP-01 customer",
+      "commands": [
+        {
+          "id": "c2000002-0000-0000-0000-000000000001",
+          "comment": "",
+          "command": "open",
+          "target": "https://quickpizza.grafana.com/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000002",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=h1",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000003",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=h1",
+          "targets": [],
+          "value": "Looking to break out of your pizza routine?"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000004",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//label[.//span[normalize-space()='Advanced']]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000005",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//label[normalize-space()='Max Calories per Slice']/../input",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000006",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=select",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000007",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=default-checkbox",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000008",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input#pizza-name",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000009",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const d = new Date(); const two = (n) => String(n).padStart(2, '0'); const day = d.getFullYear() + two(d.getMonth() + 1) + two(d.getDate()); const time = two(d.getHours()) + two(d.getMinutes()) + two(d.getSeconds()); return 'Lab Pizza ' + day + '-' + time;",
+          "targets": [],
+          "value": "pizzaName"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000010",
+          "comment": "",
+          "command": "echo",
+          "target": "${pizzaName}",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000011",
+          "comment": "",
+          "command": "type",
+          "target": "xpath=//label[normalize-space()='Max Calories per Slice']/../input",
+          "targets": [],
+          "value": "600"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000012",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//select/option[normalize-space()='Knife']",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000013",
+          "comment": "",
+          "command": "addSelection",
+          "target": "css=select",
+          "targets": [],
+          "value": "label=Knife"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000014",
+          "comment": "",
+          "command": "click",
+          "target": "id=default-checkbox",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000015",
+          "comment": "",
+          "command": "type",
+          "target": "css=input#pizza-name",
+          "targets": [],
+          "value": "${pizzaName}"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000016",
+          "comment": "",
+          "command": "assertValue",
+          "target": "xpath=//label[normalize-space()='Max Calories per Slice']/../input",
+          "targets": [],
+          "value": "600"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000017",
+          "comment": "",
+          "command": "assertSelectedLabel",
+          "target": "css=select",
+          "targets": [],
+          "value": "Knife"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000018",
+          "comment": "",
+          "command": "assertChecked",
+          "target": "id=default-checkbox",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000019",
+          "comment": "",
+          "command": "assertValue",
+          "target": "css=input#pizza-name",
+          "targets": [],
+          "value": "${pizzaName}"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000020",
+          "comment": "",
+          "command": "click",
+          "target": "name=pizza-please",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000021",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//p[starts-with(., 'Name:')]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000022",
+          "comment": "",
+          "command": "assertText",
+          "target": "xpath=//p[starts-with(., 'Name:')]",
+          "targets": [],
+          "value": "Name: ${pizzaName}"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000023",
+          "comment": "",
+          "command": "assertNotText",
+          "target": "xpath=//p[starts-with(., 'Tool:')]",
+          "targets": [],
+          "value": "Tool: Knife"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000024",
+          "comment": "",
+          "command": "storeText",
+          "target": "xpath=//p[starts-with(., 'Calories per slice:')]",
+          "targets": [],
+          "value": "calories"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000025",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return parseInt(${calories}.split(':')[1]) <= 600;",
+          "targets": [],
+          "value": "caloriesOk"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000026",
+          "comment": "",
+          "command": "assert",
+          "target": "caloriesOk",
+          "targets": [],
+          "value": "true"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000027",
+          "comment": "",
+          "command": "click",
+          "target": "name=rate-5",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000028",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=rate-result",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c2000002-0000-0000-0000-000000000029",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=rate-result",
+          "targets": [],
+          "value": "Please log in first."
+        }
+      ]
     }
   ],
   "suites": [
@@ -96,12 +334,14 @@
       "parallel": false,
       "timeout": 300,
       "tests": [
-        "t1000001-0001-4000-8000-000000000001"
+        "t1000001-0001-4000-8000-000000000001",
+        "t2000002-0002-4000-8000-000000000002"
       ]
     }
   ],
   "urls": [
-    "https://www.selenium.dev/"
+    "https://www.selenium.dev/",
+    "https://quickpizza.grafana.com/"
   ],
   "plugins": []
 }
